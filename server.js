@@ -1,17 +1,12 @@
 import { Router, StaticHandler } from "@vertx/web";
+import React from 'react';
 import reactdomserver  from 'react-dom/server';
 import Component from "./components/Component";
 
 const app = Router.router(vertx);
 
 app.get("/greetings").handler(ctx => {
-  // This one works with a response of "Running in the browser"
-      // ctx.response()
-      //   .putHeader("content-type", "text/html")
-      //   .end("Running!");
-
-      // this one gives Internal server error with no logs
-    const appHtml = reactdomserver.renderToString(<Component message="component rendered"/>);
+    const appHtml = reactdomserver.renderToString(<Component message="component rendered"/>);    
     ctx.response()
         .putHeader("content-type", "text/html")
         .end(`<!DOCTYPE html>
