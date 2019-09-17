@@ -1,0 +1,18 @@
+{
+  "version" : "0.2.0",
+  "configurations" : [ {
+    "name" : "Launch demo",
+    "type" : "node",
+    "request" : "launch",
+    "cwd" : "${workspaceFolder}",
+    "runtimeExecutable" : "${workspaceFolder}/node_modules/.bin/es4x-launcher",
+    "runtimeArgs" : [ "-Dinspect=5858" ],
+    "port" : 5858,
+    "outputCapture" : "std",
+    "serverReadyAction" : {
+      "pattern" : "started on port ([0-9]+)",
+      "uriFormat" : "http://localhost:%s",
+      "action" : "openExternally"
+    }
+  } ]
+}
